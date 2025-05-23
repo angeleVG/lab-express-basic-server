@@ -17,7 +17,7 @@ app.use(express.static("public"));
 // - `express.json()` to parse incoming requests with JSON payloads
 app.use(express.json());
 // - `morgan` logger to log all incoming requests
-app.use(express.morgan("dev"));
+app.use(morgan("dev"));
 
 
 // ROUTES

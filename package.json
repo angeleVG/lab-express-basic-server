@@ -4,6 +4,7 @@
   "description": "<details>\r   <summary>\r     <h2>Learning Goals</h2>\r   </summary>",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,9 @@
   "dependencies": {
     "express": "^5.1.0",
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
+
 }
