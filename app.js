@@ -3,6 +3,8 @@
 
 const express = require("express");
 const morgan = require("morgan");
+const articles = require("./data/articles.json");
+const projects = require("./data/projects.json");
 
 
 // CREATE EXPRESS APP
@@ -22,10 +24,30 @@ app.use(morgan("dev"));
 
 // ROUTES
 // Start defining your routes here:
+// home
 app.get("/", (req, res) =>{
     res.sendFile(__dirname + "/views/home.html");
 });
 
+// blog
+app.get("/blog", (req, res) =>{
+    res.sendFile(__dirname + "/views/blog.html");
+});
+
+// projects content
+app.get("/api/projects", (req, res) => {
+    res.json(projects);
+});
+
+// article content
+app.get("/api/articles", (req, res) => {
+    res.json(articles);
+});
+
+// 404 error page
+app.get((req, res, next) => {
+    res.status(404).sendFile(__dirname + "/views/not-found.html");
+})
 
 // START THE SERVER
 // Make your Express server listen on port 5005:
