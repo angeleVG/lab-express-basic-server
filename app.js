@@ -45,7 +45,7 @@ app.get("/api/articles", (req, res) => {
 });
 
 // 404 error page
-app.get((req, res, next) => {
+app.use((req, res, next) => {
     res.status(404).sendFile(__dirname + "/views/not-found.html");
 })
 
